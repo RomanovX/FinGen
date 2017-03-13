@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>FinGen</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            body {
+                background:
+                        radial-gradient(black 15%, transparent 16%) 0 0,
+                        radial-gradient(black 15%, transparent 16%) 8px 8px,
+                        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+                        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+                background-color:#282828;
+                background-size:16px 16px;
+
+                font-family: 'Lato', 'Helvetica', 'Lucida Sans Unicode', 'Lucida Grande', 'sans-serif';
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                letter-spacing: 1px
+            }
+
+            .centered {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                /* bring your own prefixes */
+                transform: translate(-50%, -50%);
+            }
+
+            #page {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+
+                background-color: #ffffff;
+                border-radius: 15px;
+                max-width: 450px;
+                padding: 25px;
+
+                -moz-box-shadow:    inset 0 0 10px #000000;
+                -webkit-box-shadow: inset 0 0 10px #000000;
+                box-shadow:         inset 0 0 10px #000000;
+            }
+
+            #header {
+                font-family: 'Helvetica', 'Lucida Sans Unicode', 'Lucida Grande', 'sans-serif';
+                font-size: 30px;
+                font-weight: bold;
+                line-height: 115%;
+
+            }
+
+            #topText {
+                padding-top: 23px;
+                color: #222222;
+            }
+
+            #botText {
+                padding-top: 20px;
+                color: #222222;
+            }
+        </style>
+        <body>
+            <table id="page">
+                <tr>
+                    <td id="header">
+                        Still connecting...
+                    </td>
+                </tr>
+                <tr>
+                    <td id="topText">
+                        We are working on connecting to the selected channel. If this isn't working, please try again after a
+                        minute.
+                    </td>
+                </tr>
+                <tr>
+                    <td id="botText">
+                        This page should close automatically, but if it doesn't, you can now safely close it by clicking the
+                        'Cancel' button.
+                    </td>
+                </tr>
+            </table>
+            <script>
+                window.location.hash = "closeme";
+            </script>
+        </body>
+    </head>
+</html>
