@@ -1,0 +1,7 @@
+{
+  "name": "fingen",
+  "short_name": "fingen",
+  "description": "Generate finals from music sources",
+  "start_url": "/",
+  "display": "standalone"
+}
