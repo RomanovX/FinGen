@@ -146,7 +146,7 @@
                 </div>
                 <div id="optionsContainer">
                     <div>Length of songs: [[textualSongLength]]</div>
-                    <paper-slider min="60" max="150" value="105" immediate-value="[[fillers]]"></paper-slider>
+                    <paper-slider min="60" max="150" value="105" immediate-value="{{songLength}}"></paper-slider>
                     <paper-dropdown-menu class="dropdown" label="Filler">
                         <paper-listbox class="dropdown-content" selected="0" selectedItem="{{filler}}">
                             <template is="dom-repeat" items="[[mockFillers]]">
@@ -156,7 +156,7 @@
                     </paper-dropdown-menu>
 
                     <div>Filler length: [[textualFillerLength]]</div>
-                    <paper-slider min="0" max="30" value="10" immediate-value="[[fillerLength]]"></paper-slider>
+                    <paper-slider min="0" max="30" value="10" immediate-value="{{fillerLength}}"></paper-slider>
                 </div>
             </div>
         </div>
