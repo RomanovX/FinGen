@@ -21,7 +21,7 @@
             }
 
             #page {
-                display: flex;
+                display: table;
                 position: fixed;
                 top: 50%;
                 left: 50%;
@@ -30,24 +30,29 @@
 
                 background-color: #ffffff;
                 border-radius: 15px;
-                max-width: 450px;
-                padding: 25px;
+
+                border-spacing: 25px;
+                border-collapse: separate;
 
                 -moz-box-shadow:    inset 0 0 10px #000000;
                 -webkit-box-shadow: inset 0 0 10px #000000;
                 box-shadow:         inset 0 0 10px #000000;
             }
 
+            #optionsContainer {
+                display: table-cell;
+            }
+
             #songContainer {
-                width: 400px;
-                height: 500px;
+                display: block;
+                max-width: 400px;
+                max-height: 200px;
 
                 background-color: lightgrey;
                 border-radius: 10px;
                 border: 4px ridge white;
 
-                overflow: hidden;
-                text-overflow: ellipsis;
+                overflow-y: auto;
                 white-space: nowrap;
 
                 padding: 3px;
@@ -64,7 +69,6 @@
 
                 min-height: 30px;
                 height: 30px;
-                /*font-size: 20px;*/
                 overflow: hidden;
                 text-overflow: ellipsis;
 
@@ -93,8 +97,9 @@
                     </paper-item>
                 </template>
             </div>
-            <div>
-                Rechts
+            <div id="optionsContainer">
+                <div>Length of songs: [[textualSongLength]]</div>
+                <paper-slider min="60" max="150" value="105" immediate-value="{{songLength}}"></paper-slider>
             </div>
         </div>
     </template>
@@ -104,9 +109,15 @@
             is: 'fingen-app',
 
             properties: {
-                prop1: {
+                songLength: {
+                    type: Number,
+                    value: 105,
+                    notify: true
+                },
+
+                textualSongLength: {
                     type: String,
-                    value: 'fingen-app'
+                    computed: '_computeTextualSongLength(songLength)'
                 }
             },
 
@@ -136,6 +147,15 @@
                     animation: 150,
                     cursor: 'move'
                 });
+            },
+
+            _computeTextualSongLength: function(songLength) {
+                var minutes = Math.floor(songLength / 60);
+                var seconds = songLength % 60;
+                if (seconds < 10) {
+                    seconds = '0' + seconds;
+                }
+                return minutes + ':' + seconds
             }
 
         });
