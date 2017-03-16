@@ -149,7 +149,7 @@
                     <paper-slider min="60" max="150" value="105" immediate-value="{{songLength}}"></paper-slider>
                     <paper-dropdown-menu class="dropdown" label="Filler">
                         <paper-listbox class="dropdown-content" selected="0" selectedItem="{{filler}}">
-                            <template is="dom-repeat" items="[[mockFillers]]">
+                            <template is="dom-repeat" items="[[fillers]]">
                                 <paper-item>[[item.title]]</paper-item>
                             </template>
                         </paper-listbox>
